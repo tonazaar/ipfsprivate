@@ -1,0 +1,8 @@
+
+https://github.com/ahester57/ipfs-private-swarm
+
+https://mrh.io/ipfs-private-networks/
+
+https://medium.com/@s_van_laar/deploy-a-private-ipfs-network-on-ubuntu-in-5-steps-5aad95f7261b 
+
+
