@@ -1,4 +1,5 @@
 
+
 Install IPFS
 
 Not to confuse goipfs, jsipfs, ipfs
@@ -26,17 +27,17 @@ to get started, enter:
 
 
 
-Basic concepts
+1) Basic concepts
 
 Creating files
 
 Reading files
 
-Accessing from other server
+2) Accessing from other server
 
-Accessing from public
+3) Accessing from public
 
-Website access
+4) Website access
 
 Private access
 

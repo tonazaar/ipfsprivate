@@ -6,3 +6,15 @@ https://mrh.io/ipfs-private-networks/
 https://medium.com/@s_van_laar/deploy-a-private-ipfs-network-on-ubuntu-in-5-steps-5aad95f7261b 
 
 
+https://medium.com/@rossbulat/introduction-to-ipfs-set-up-nodes-on-your-network-with-http-gateways-10e21ea689a4
+
+
+https://medium.com/@ConsenSys/an-introduction-to-ipfs-9bba4860abd0
+
+
+https://brilliant.org/wiki/merkle-tree/
+
+directed acyclic graph
+
+
+https://www.slideshare.net/chenghanTsai1/ipfs-85264010

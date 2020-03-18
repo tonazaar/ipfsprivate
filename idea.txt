@@ -1,0 +1,23 @@
+
+Using available sample create license issual and tracking system on IPFS
+
+Features
+
+A) Front-end will allow entry of terms-of-license, then it is uploaded into IPFS and given to the end-user.
+
+B) The End-user can see his list of licenses and terms on IPFS
+
+C) Web portal for world wide users to use
+
+
+Company benefits
+- Experience in using IPFS cluster, front-end, private, public networks
+- Yearlu charges can be charged
+- GPL license for can be issued
+- Fundraising
+- Can be used as real-time example
+
+User benefits
+- Many people may use online solution
+- Many people may download and start using it
+

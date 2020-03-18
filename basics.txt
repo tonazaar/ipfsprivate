@@ -40,6 +40,32 @@ Gateway (readonly) server listening on /ip4/127.0.0.1/tcp/8080
 Daemon is ready
 
 
+
+
+
+
+For comparison
+
+jsipfs daemon &
+[1] 24758
+rameshbn@openvpn-srv:~$ Initializing IPFS daemon...
+js-ipfs version: 0.40.0
+System version: x64/linux
+Node.js version: 10.18.1
+Swarm listening on /ip4/157.245.63.46/tcp/6002/ipfs/QmSUJbRw4o45jurzpvBUtKQxYkFfjVGHNTzWhEjj44vTAx
+Swarm listening on /ip4/157.245.63.46/tcp/6003/ws/ipfs/QmSUJbRw4o45jurzpvBUtKQxYkFfjVGHNTzWhEjj44vTAx
+Swarm listening on /p2p-circuit/ipfs/QmSUJbRw4o45jurzpvBUtKQxYkFfjVGHNTzWhEjj44vTAx
+Swarm listening on /p2p-circuit/ip4/157.245.63.46/tcp/6002/ipfs/QmSUJbRw4o45jurzpvBUtKQxYkFfjVGHNTzWhEjj44vTAx
+Swarm listening on /p2p-circuit/ip4/157.245.63.46/tcp/6003/ws/ipfs/QmSUJbRw4o45jurzpvBUtKQxYkFfjVGHNTzWhEjj44vTAx
+API listening on /ip4/157.245.63.46/tcp/5001/http
+Gateway (read only) listening on /ip4/157.245.63.46/tcp/9090/http
+Web UI available at http://157.245.63.46:5001/webui
+Daemon is ready
+
+
+
+A
+
 env |grep IPFS
 IPFS_PATH=/home/alarm/ipfsrepos/one
 
@@ -78,5 +104,86 @@ added QmdU8jKjUy2MqBzDsnxv3VBgxb1DWJXn7rBDxz1wXjFtLg ram.txt
  ipfs cat QmdU8jKjUy2MqBzDsnxv3VBgxb1DWJXn7rBDxz1wXjFtLg
 welcome
 
+
+
+ ipfs name publish QmdU8jKjUy2MqBzDsnxv3VBgxb1DWJXn7rBDxz1wXjFtLg
+Error: failed to find any peer in table
+
+
+
+jsipfs name publish QmbdQXQh9B2bWZgZJqfbjNPV5jGN2owbQ3vjeYsaDaCDqU
+Published to QmSUJbRw4o45jurzpvBUtKQxYkFfjVGHNTzWhEjj44vTAx: /ipfs/QmbdQXQh9B2bWZgZJqfbjNPV5jGN2owbQ3vjeYsaDaCDqU
+
+
+jsipfs swarm peers
+/ip4/104.236.176.52/tcp/4001/ipfs/QmSoLnSGccFuZQJzRadHn95W2CrSFmZuTdDWP8HXaHca9z
+/ip4/104.131.131.82/tcp/4001/ipfs/QmaCpDMGvV2BGHeYERUEnRQAwe3N8SzbUtfsmvsqQLuvuJ
+/ip4/104.236.179.241/tcp/4001/ipfs/QmSoLPppuBtQSGwKDZT2M73ULpjvfd3aZ6ha4oFGL1KrGM
+/ip4/162.243.248.213/tcp/4001/ipfs/QmSoLueR4xBeUbY9WZ9xGUUxunbKWcrNFTDAadQJmocnWm
+/ip4/128.199.219.111/tcp/4001/ipfs/QmSoLSafTMBsPKadTEgaXctDQVcqN88CNLHXMkTNwMKPnu
+/ip4/104.236.76.40/tcp/4001/ipfs/QmSoLV4Bbm51jM9C4gDYZQ9Cy3U6aXMJDAbzgu2fzaDs64
+/ip4/178.62.158.247/tcp/4001/ipfs/QmSoLer265NRgSp2LA3dPaeykiS1J6DifTC88f5uVQKNAd
+/ip4/178.62.61.185/tcp/4001/ipfs/QmSoLMeWqB7YGVLJN3pNLQpmmEk35v6wYtsMGLzSr5QBU3
+/dns4/node0.preload.ipfs.io/tcp/443/wss/ipfs/QmZMxNdpMkewiVZLMRxaNxUeZpDUb34pWjZ1kZvsd16Zic
+/dns4/node1.preload.ipfs.io/tcp/443/wss/ipfs/Qmbut9Ywz9YEDrz8ySBSgWyJk41Uvm2QJPhwDJzJyGFsD6
+
+
+[alarm@alarmpi ipfsrepos]$ 
+ ipfs id
+{
+	"ID": "QmQpynLMNnjFWjGRVFenDQJzaWbERYiFvNi8QnBLqNUfo4",
+	"PublicKey": "CAASpgIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDK7+iiyM7No4+qZnBqUgaU1L/s62QR5f8jt9oc6hckLvdgMrxyt2P5oY2n7t6mz3PAQlTgJ0edIz8FCmWw5FXiwFwHgqUPrhnpjj82lkMfnDiNYh7O+SPfBMUx3IZIE+PQ+DFzkGAWTD++HkPGq91fIF6sLRn96P4aFZFsNk0ScUlxAniPt2K3leN0ZPCX2sdiarwUqQscGxD4Bs+iXSu872geo2aQibhAuX1zB4WOz6uq1DeN4cVdF2PFbGw+N+mEK5JPFj7VZuVNOdgq5N1VQ5tjqOgAlIjLEFIRWL8b0wrWNMGqJn5WNvZk/8dOrcRH5vFI520B/DReQ1M17SpFAgMBAAE=",
+	"Addresses": [
+		"/ip4/127.0.0.1/tcp/4001/ipfs/QmQpynLMNnjFWjGRVFenDQJzaWbERYiFvNi8QnBLqNUfo4",
+		"/ip4/10.42.0.66/tcp/4001/ipfs/QmQpynLMNnjFWjGRVFenDQJzaWbERYiFvNi8QnBLqNUfo4",
+		"/ip4/10.42.0.65/tcp/4001/ipfs/QmQpynLMNnjFWjGRVFenDQJzaWbERYiFvNi8QnBLqNUfo4",
+		"/ip4/192.168.29.203/tcp/4001/ipfs/QmQpynLMNnjFWjGRVFenDQJzaWbERYiFvNi8QnBLqNUfo4",
+		"/ip4/192.168.88.1/tcp/4001/ipfs/QmQpynLMNnjFWjGRVFenDQJzaWbERYiFvNi8QnBLqNUfo4",
+		"/ip6/::1/tcp/4001/ipfs/QmQpynLMNnjFWjGRVFenDQJzaWbERYiFvNi8QnBLqNUfo4",
+		"/ip6/2405:201:d802:17cf:b39:6441:86bf:71c0/tcp/4001/ipfs/QmQpynLMNnjFWjGRVFenDQJzaWbERYiFvNi8QnBLqNUfo4",
+		"/ip6/2405:201:d802:17cf:229d:eb66:5595:9511/tcp/4001/ipfs/QmQpynLMNnjFWjGRVFenDQJzaWbERYiFvNi8QnBLqNUfo4",
+		"/ip4/1.39.167.139/tcp/30959/ipfs/QmQpynLMNnjFWjGRVFenDQJzaWbERYiFvNi8QnBLqNUfo4"
+	],
+	"AgentVersion": "go-ipfs/0.4.23/6ce9a355f",
+	"ProtocolVersion": "ipfs/0.1.0"
+}
+
+
+
+[alarm@alarmpi ipfsrepos]$  ipfs id
+{
+	"ID": "QmQpynLMNnjFWjGRVFenDQJzaWbERYiFvNi8QnBLqNUfo4",
+	"PublicKey": "CAASpgIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDK7+iiyM7No4+qZnBqUgaU1L/s62QR5f8jt9oc6hckLvdgMrxyt2P5oY2n7t6mz3PAQlTgJ0edIz8FCmWw5FXiwFwHgqUPrhnpjj82lkMfnDiNYh7O+SPfBMUx3IZIE+PQ+DFzkGAWTD++HkPGq91fIF6sLRn96P4aFZFsNk0ScUlxAniPt2K3leN0ZPCX2sdiarwUqQscGxD4Bs+iXSu872geo2aQibhAuX1zB4WOz6uq1DeN4cVdF2PFbGw+N+mEK5JPFj7VZuVNOdgq5N1VQ5tjqOgAlIjLEFIRWL8b0wrWNMGqJn5WNvZk/8dOrcRH5vFI520B/DReQ1M17SpFAgMBAAE=",
+	"Addresses": [
+		"/ip4/127.0.0.1/tcp/4001/ipfs/QmQpynLMNnjFWjGRVFenDQJzaWbERYiFvNi8QnBLqNUfo4",
+		"/ip4/10.42.0.66/tcp/4001/ipfs/QmQpynLMNnjFWjGRVFenDQJzaWbERYiFvNi8QnBLqNUfo4",
+		"/ip4/10.42.0.65/tcp/4001/ipfs/QmQpynLMNnjFWjGRVFenDQJzaWbERYiFvNi8QnBLqNUfo4",
+		"/ip4/192.168.29.203/tcp/4001/ipfs/QmQpynLMNnjFWjGRVFenDQJzaWbERYiFvNi8QnBLqNUfo4",
+		"/ip4/192.168.88.1/tcp/4001/ipfs/QmQpynLMNnjFWjGRVFenDQJzaWbERYiFvNi8QnBLqNUfo4",
+		"/ip6/::1/tcp/4001/ipfs/QmQpynLMNnjFWjGRVFenDQJzaWbERYiFvNi8QnBLqNUfo4",
+		"/ip6/2405:201:d802:17cf:b39:6441:86bf:71c0/tcp/4001/ipfs/QmQpynLMNnjFWjGRVFenDQJzaWbERYiFvNi8QnBLqNUfo4",
+		"/ip6/2405:201:d802:17cf:229d:eb66:5595:9511/tcp/4001/ipfs/QmQpynLMNnjFWjGRVFenDQJzaWbERYiFvNi8QnBLqNUfo4"
+	],
+	"AgentVersion": "go-ipfs/0.4.23/6ce9a355f",
+	"ProtocolVersion": "ipfs/0.1.0"
+}
+
+
+
+
+rameshbn@openvpn-srv:~$ jsipfs id
+{
+  "id": "QmSUJbRw4o45jurzpvBUtKQxYkFfjVGHNTzWhEjj44vTAx",
+  "publicKey": "CAASogEwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBANVoGK6KpT/3AZ9ub+DvWV2zJ4QdAf+NQOVIvQGLNnNzR/zKW2KI4bd68KgrrOG4ZgkXxXxABraxab3N0sxwr0G1Qx7erj6IPx1TaNI775uZzy65WvtO6zziQrzNZYBkZ1ztHhFeXdqi3iG4ivjc1NjhX7JKJRn+14efHRMXg4hBAgMBAAE=",
+  "addresses": [
+    "/ip4/157.245.63.46/tcp/6002/ipfs/QmSUJbRw4o45jurzpvBUtKQxYkFfjVGHNTzWhEjj44vTAx",
+    "/ip4/157.245.63.46/tcp/6003/ws/ipfs/QmSUJbRw4o45jurzpvBUtKQxYkFfjVGHNTzWhEjj44vTAx",
+    "/p2p-circuit/ip4/157.245.63.46/tcp/6002/ipfs/QmSUJbRw4o45jurzpvBUtKQxYkFfjVGHNTzWhEjj44vTAx",
+    "/p2p-circuit/ip4/157.245.63.46/tcp/6003/ws/ipfs/QmSUJbRw4o45jurzpvBUtKQxYkFfjVGHNTzWhEjj44vTAx",
+    "/p2p-circuit/ipfs/QmSUJbRw4o45jurzpvBUtKQxYkFfjVGHNTzWhEjj44vTAx"
+  ],
+  "agentVersion": "js-ipfs/0.40.0",
+  "protocolVersion": "9000"
+}
 
 
