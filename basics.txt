@@ -1,0 +1,82 @@
+https://docs.ipfs.io/introduction/usage/
+
+https://wiki.archlinux.org/index.php/IPFS
+
+Setup
+
+
+ ipfs daemon &
+[1] 7513
+[alarm@alarmpi ~]$ Initializing daemon...
+go-ipfs version: 0.4.23-6ce9a355f
+Repo version: 7
+System version: arm/linux
+Golang version: go1.13.7
+
+[alarm@alarmpi ~]$ 
+[alarm@alarmpi ~]$ 
+[alarm@alarmpi ~]$ Swarm is limited to private network of peers with the swarm key
+Swarm key fingerprint: 27db481090f447dce5c9c380f70c9b42
+Swarm listening on /ip4/10.42.0.65/tcp/4001
+Swarm listening on /ip4/10.42.0.66/tcp/4001
+Swarm listening on /ip4/127.0.0.1/tcp/4001
+Swarm listening on /ip4/192.168.29.203/tcp/4001
+Swarm listening on /ip4/192.168.88.1/tcp/4001
+Swarm listening on /ip6/2405:201:d802:17cf:229d:eb66:5595:9511/tcp/4001
+Swarm listening on /ip6/2405:201:d802:17cf:b39:6441:86bf:71c0/tcp/4001
+Swarm listening on /ip6/::1/tcp/4001
+Swarm listening on /p2p-circuit
+Swarm announcing /ip4/10.42.0.65/tcp/4001
+Swarm announcing /ip4/10.42.0.66/tcp/4001
+Swarm announcing /ip4/127.0.0.1/tcp/4001
+Swarm announcing /ip4/192.168.29.203/tcp/4001
+Swarm announcing /ip4/192.168.88.1/tcp/4001
+Swarm announcing /ip6/2405:201:d802:17cf:229d:eb66:5595:9511/tcp/4001
+Swarm announcing /ip6/2405:201:d802:17cf:b39:6441:86bf:71c0/tcp/4001
+Swarm announcing /ip6/::1/tcp/4001
+API server listening on /ip4/127.0.0.1/tcp/5001
+WebUI: http://127.0.0.1:5001/webui
+Gateway (readonly) server listening on /ip4/127.0.0.1/tcp/8080
+Daemon is ready
+
+
+env |grep IPFS
+IPFS_PATH=/home/alarm/ipfsrepos/one
+
+
+Unable to access? (we may have to give access)
+
+ http://127.0.0.1:5001/webui
+
+
+
+You need to set the IPFS host to 0.0.0.0
+
+ipfs config Addresses.API /ip4/0.0.0.0/tcp/5001
+ipfs config Addresses.Gateway /ip4/0.0.0.0/tcp/9001
+You may also need to set CORS:
+
+ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '["*"]'
+
+
+
+
+ ipfs add
+ipfs: Reading from /dev/stdin; send Ctrl-d to stop.
+hello
+added QmZULkCELmmk5XNfCgTnCyFgAVxBRBXyDHGGMVoLFLiXEN QmZULkCELmmk5XNfCgTnCyFgAVxBRBXyDHGGMVoLFLiXEN
+ 6 B / 6 B [==========================================================================================================================] 100.00%[alarm@alarmpi ~]$ ipfs add 'echo welcome'
+
+
+
+vi /tmp/ram.txt
+[alarm@alarmpi ~]$ ipfs add /tmp/ram.txt  
+added QmdU8jKjUy2MqBzDsnxv3VBgxb1DWJXn7rBDxz1wXjFtLg ram.txt
+
+
+
+ ipfs cat QmdU8jKjUy2MqBzDsnxv3VBgxb1DWJXn7rBDxz1wXjFtLg
+welcome
+
+
+
