@@ -1,0 +1,23 @@
+rameshbn@openvpn-srv:~$ export IPFS_PATH=/home/rameshbn/repos/one
+rameshbn@openvpn-srv:~$ jsipfs daemon
+Initializing IPFS daemon...
+js-ipfs version: 0.40.0
+System version: x64/linux
+Node.js version: 10.18.1
+Swarm listening on /ip4/127.0.0.1/tcp/4002/ipfs/QmVwvS2mjw3pvVgFqfYL5pwtnQhf68kWKVGRSWSMaUkSGS
+Swarm listening on /ip4/157.245.63.46/tcp/4002/ipfs/QmVwvS2mjw3pvVgFqfYL5pwtnQhf68kWKVGRSWSMaUkSGS
+Swarm listening on /ip4/10.15.0.10/tcp/4002/ipfs/QmVwvS2mjw3pvVgFqfYL5pwtnQhf68kWKVGRSWSMaUkSGS
+Swarm listening on /ip4/10.8.0.1/tcp/4002/ipfs/QmVwvS2mjw3pvVgFqfYL5pwtnQhf68kWKVGRSWSMaUkSGS
+Swarm listening on /ip4/127.0.0.1/tcp/4003/ws/ipfs/QmVwvS2mjw3pvVgFqfYL5pwtnQhf68kWKVGRSWSMaUkSGS
+Swarm listening on /p2p-circuit/ipfs/QmVwvS2mjw3pvVgFqfYL5pwtnQhf68kWKVGRSWSMaUkSGS
+Swarm listening on /p2p-circuit/ip4/127.0.0.1/tcp/4002/ipfs/QmVwvS2mjw3pvVgFqfYL5pwtnQhf68kWKVGRSWSMaUkSGS
+Swarm listening on /p2p-circuit/ip4/157.245.63.46/tcp/4002/ipfs/QmVwvS2mjw3pvVgFqfYL5pwtnQhf68kWKVGRSWSMaUkSGS
+Swarm listening on /p2p-circuit/ip4/10.15.0.10/tcp/4002/ipfs/QmVwvS2mjw3pvVgFqfYL5pwtnQhf68kWKVGRSWSMaUkSGS
+Swarm listening on /p2p-circuit/ip4/10.8.0.1/tcp/4002/ipfs/QmVwvS2mjw3pvVgFqfYL5pwtnQhf68kWKVGRSWSMaUkSGS
+Swarm listening on /p2p-circuit/ip4/127.0.0.1/tcp/4003/ws/ipfs/QmVwvS2mjw3pvVgFqfYL5pwtnQhf68kWKVGRSWSMaUkSGS
+API listening on /ip4/127.0.0.1/tcp/5002/http
+Gateway (read only) listening on /ip4/127.0.0.1/tcp/9090/http
+Web UI available at http://127.0.0.1:5002/webui
+Daemon is ready
+ 
+

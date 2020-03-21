@@ -1,0 +1,31 @@
+ export IPFS_PATH=~/repos/one
+rameshbn@openvpn-srv:~/ipfsstuffs/ipfsprivate$ jsipfs init
+initializing ipfs node at /home/rameshbn/repos/one
+generating 2048-bit RSA keypair...done
+peer identity: QmVwvS2mjw3pvVgFqfYL5pwtnQhf68kWKVGRSWSMaUkSGS
+to get started, enter:
+
+	jsipfs cat /ipfs/QmfGBRT6BbWJd7yUc2uYdaUZJBbnEFvTqehPFoSMQ6wgdr/readme
+
+rameshbn@openvpn-srv:~/ipfsstuffs/ipfsprivate$ export IPFS_PATH=~/repos/two
+rameshbn@openvpn-srv:~/ipfsstuffs/ipfsprivate$ jsipfs init
+initializing ipfs node at /home/rameshbn/repos/two
+generating 2048-bit RSA keypair...done
+peer identity: QmP1NnQkMyYCV5jGBG2E2ziRDMxLgVK5pRXKRryAfAgeXU
+to get started, enter:
+
+	jsipfs cat /ipfs/QmfGBRT6BbWJd7yUc2uYdaUZJBbnEFvTqehPFoSMQ6wgdr/readme
+
+
+
+
+echo -e "/key/swarm/psk/1.0.0/\n/base16/\n`tr -dc 'a-f0-9' < /dev/urandom | head -c64`" > swarm.key
+
+
+
+
+ cp swarm.key  ~/repos/one/
+rameshbn@openvpn-srv:~/ipfsstuffs/ipfsprivate$ cp swarm.key  ~/repos/two/
+
+
+With jsipfs (it is not picking swarm-key?)
