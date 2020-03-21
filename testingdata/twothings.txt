@@ -46,3 +46,20 @@ this is inout test
 
 
 
+
+
+rameshbn@openvpn-srv:~/ipfsstuffs/ipfsprivate/clienttest$ node testcommand.js 
+err=FetchError: request to http://157.245.63.46:5001/api/v0/add?stream-channels=true failed, reason: connect ECONNREFUSED 157.245.63.46:5001
+
+
+
+"API": "/ip4/127.0.0.1/tcp/5002",
+basics.txt:ipfs config Addresses.API /ip4/0.0.0.0/tcp/5002
+
+
+
+restart then it works
+
+node testcommand.js 
+repo1=[{"path":"tmp/myfile.txt","hash":"QmNz1UBzpdd4HfZ3qir3aPiRdX5a93XwTuDNyXRc6PKhWW","size":11},{"path":"tmp","hash":"QmWXdjNC362aPDtwHPUE9o2VMqPeNeCQuTBTv1NsKtwypg","size":67}]
+
