@@ -1,18 +1,18 @@
 
-####Various ways of using IPFS
+#### Various ways of using IPFS
 
 A) Standalone storage system with one IPFS node
 
 B) Storage system with few IPFS node connected (private mode)
 
-B) Storage system with few IPFS node connected (public mode)
+C) Storage system with few IPFS node connected (public mode)
 
-B) Storage system connected as IPFS cluster (private mode)
+D) Storage system connected as IPFS cluster (private mode)
 
-B) Storage system connected as IPFS cluster (public mode)
+E) Storage system connected as IPFS cluster (public mode)
 
 
-#### Availability of various IPFS nodes
+#### Various type of IPFS nodes
 
 The IPFS nodes can be run in various methods
 - Javascript IPFS, known as jsipfs
@@ -43,18 +43,18 @@ Here you will find information of following
 
 ##### Starting a IPFS node          
 
-The IPFS setup can be done by downloading IPFS 
+The IPFS setup can be created by downloading IPFS 
 
-Go IPFS can be got by following
-https://docs.ipfs.io/guides/guides/install/
+Go IPFS can be obtained by following
+- https://docs.ipfs.io/guides/guides/install/
 
 JS IPFS can be got by following
-https://js.ipfs.io/
+- https://js.ipfs.io/
 
 
-##### To start IPFS node using JS IPFS
+###### To start IPFS node using JS IPFS
 
-- set environment variable IPFS_PATH to a directory of IPFS repository
+- Set environment variable IPFS_PATH to a directory of IPFS repository
 - Run the command jsipfs init
 - Run the command jsipfs daemon
 
@@ -76,9 +76,9 @@ $ jsipfs daemon
 
 ```
 
-##### To start IPFS node using GO IPFS
+###### To start IPFS node using GO IPFS
 
-- set environment variable IPFS_PATH to a directory of IPFS repository
+- Set environment variable IPFS_PATH to a directory of IPFS repository
 - Run the command ipfs init
 - Run the command ipfs daemon
 
@@ -127,7 +127,8 @@ Daemon is ready
 The above two steps show how to detup a default IPFS nodes
 
 - The points to note are, the location of config file 
-- The contents of IPFS_PATH directory looks like below
+
+The contents of IPFS_PATH directory looks like below
 
 ```
 ls -l ~/repos/one
@@ -151,7 +152,7 @@ Important aspects of config is explained in
 To play with IPFS coommands
 - https://docs.ipfs.io/reference/api/cli/
 
-To try IPFS files as normal files look at
+To try IPFS files as normal files 
 - https://docs.ipfs.io/reference/api/cli/#ipfs-files
 
 Detailed examples using jsipfs
@@ -163,13 +164,13 @@ Useful course on IPFS
 
 ##### Building IPFS private network
 
+For comparison in normal IPFS setup, the IPFS node is connected to its peer public nodes. In private network, you generate a key (called swarm.key), which will be placed in IPF_PATH directory. Only those nodes with that swarm.key can only connect to each other.
+
 ###### Normal IPFS setup
-In normal IPFS setup, the IPFS node is connected to its peer nodes.  The peer nodes can be listed using command "ipfs swarm peers"
 
-In setup of private network, you generatea key (called swarm.key), which will be placed in IPF_PATH directory.
+In normal IPFS setup, the IPFS node is connected to public peer nodes.  The peer nodes can be listed using command "ipfs swarm peers"
 
-
-Here you will see 
+Example           
 
 ```
 ipfs swarm peers
@@ -180,15 +181,20 @@ ipfs swarm peers
 ```
 
 Those peers you see above are public peers
+
 For more details check this
 - https://docs.ipfs.io/guides/examples/bootstrap/
 
 
 
 ###### Private IPFS setup
+
+In private network, you generate a key (called swarm.key), which will be placed in IPF_PATH directory. Only those nodes with that swarm.key can only connect to each other.
+
 A swarm key is created using one of the two methods
  
 Method-1
+
 ```
 git clone https://github.com/Kubuxu/go-ipfs-swarm-key-gen
 cd go-ipfs-swarm-key-gen/
@@ -198,11 +204,14 @@ go run ipfs-swarm-key-gen/main.go > $IPFS_PATH/swarm.key
 
 
 Method-2
+
 ```
 echo -e "/key/swarm/psk/1.0.0/\n/base16/\n`tr -dc 'a-f0-9' < /dev/urandom | head -c64`" > swarm.key
 
 ```
-Method-2 is got from link
+
+Method-2 is obtained from link
+
 - https://medium.com/@s_van_laar/deploy-a-private-ipfs-network-on-ubuntu-in-5-steps-5aad95f7261b
 
 When swarm.key is present in $IPFS_PATH directory, only those peers what that same key can connect.
