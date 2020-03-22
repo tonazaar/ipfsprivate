@@ -1,21 +1,16 @@
-/home/rameshbn/repos
-rameshbn@openvpn-srv:~/repos$ sudo snap install ipfs
-[sudo] password for rameshbn: 
-ipfs v0.4.21 from Leo Arias (elopio) installed
-rameshbn@openvpn-srv:~/repos$ which ipfs
-/snap/bin/ipfs
-rameshbn@openvpn-srv:~/repos$ pwd
-/home/rameshbn/repos
-rameshbn@openvpn-srv:~/repos$ ls
-one  one.txt  step.txt  three  three.txt  two  two.txt
-rameshbn@openvpn-srv:~/repos$ env |grep IPFS
+
+##### Validate of go-ipfs is working for private network
+
+A) Create 3 repos
+- repo (one, two) has swarm.key
+- repo (three has no swarm.key
+
+
+Start repo three
+```
 IPFS_PATH=/home/rameshbn/repos/three
-rameshbn@openvpn-srv:~/repos$ fg
-jsipfs daemon
-^CReceived interrupt signal, shutting down...
-rameshbn@openvpn-srv:~/repos$ fg
--bash: fg: current: no such job
-rameshbn@openvpn-srv:~/repos$ ipfs daemon 
+
+$ ipfs daemon 
 Initializing daemon...
 go-ipfs version: 0.4.21-8ca278f45
 Repo version: 7
@@ -38,15 +33,15 @@ API server listening on /ip4/127.0.0.1/tcp/9002
 WebUI: http://127.0.0.1:9002/webui
 Gateway (readonly) server listening on /ip4/127.0.0.1/tcp/9095
 Daemon is ready
-^Z
-[1]+  Stopped                 ipfs daemon
-rameshbn@openvpn-srv:~/repos$ bg
-[1]+ ipfs daemon &
-rameshbn@openvpn-srv:~/repos$ 
-rameshbn@openvpn-srv:~/repos$ export IPFS_PATH=/home/rameshbn/repos/one
-rameshbn@openvpn-srv:~/repos$ ipfs daemon &
-[2] 10095
-rameshbn@openvpn-srv:~/repos$ Initializing daemon...
+
+```
+
+
+Start repo one
+```
+$ export IPFS_PATH=/home/rameshbn/repos/one
+$ ipfs daemon &
+$ Initializing daemon...
 go-ipfs version: 0.4.21-8ca278f45
 Repo version: 7
 System version: amd64/linux
@@ -71,10 +66,13 @@ WebUI: http://127.0.0.1:5002/webui
 Gateway (readonly) server listening on /ip4/127.0.0.1/tcp/9090
 Daemon is ready
 
-rameshbn@openvpn-srv:~/repos$ export IPFS_PATH=/home/rameshbn/repos/two
-rameshbn@openvpn-srv:~/repos$ ipfs daemon &
-[3] 10127
-rameshbn@openvpn-srv:~/repos$ Initializing daemon...
+```
+
+Start repo two
+```
+$ export IPFS_PATH=/home/rameshbn/repos/two
+$ ipfs daemon &
+$ Initializing daemon...
 go-ipfs version: 0.4.21-8ca278f45
 Repo version: 7
 System version: amd64/linux
@@ -100,10 +98,15 @@ Gateway (readonly) server listening on /ip4/127.0.0.1/tcp/9091
 Daemon is ready
 
 
+```
+
+###### Get the listeners of each repo
 
 
- export IPFS_PATH=/home/rameshbn/repos/one
-rameshbn@openvpn-srv:~/repos$ ipfs id
+Repo one
+```
+export IPFS_PATH=/home/rameshbn/repos/one
+$ ipfs id
 {
 	"ID": "QmVwvS2mjw3pvVgFqfYL5pwtnQhf68kWKVGRSWSMaUkSGS",
 	"PublicKey": "CAASpgIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC1mKg/VSr+mgnmXzDWA8OlAqHTOjq9to0JZzRAjCrDOGlSbtwgZv3NvXzaeFozOwMOCAv65VF+cv0CUU79/+kz/SSdKZcnUUPMi7Ubl+5pfCiZ9pdu1Z6MrtW+GiSz6zta0nJ6YTyY3MVdiLdWjItBIXDgib0HYtA5+dykgMx490Cdk9jb2FHqKwLCRRb+PEF3fYD8ov394u1YqmXAwpAK7h1tK0TaHtvgAouiUYRM88Ec8gsN8NLUONpzIlH90IMtD3IqRTuwEhKrIUk2PUg3uQqd4ElhJwmfY+LY6yKv34St71LYrpMejathJWkyxy80FpkHnfimEPlJS7sgvlFHAgMBAAE=",
@@ -119,12 +122,15 @@ rameshbn@openvpn-srv:~/repos$ ipfs id
 	"ProtocolVersion": "ipfs/0.1.0"
 }
 
+```
 
 
 
 
+Repo two
+```
 export IPFS_PATH=/home/rameshbn/repos/two
-rameshbn@openvpn-srv:~/repos$ ipfs id
+$ ipfs id
 {
 	"ID": "QmP1NnQkMyYCV5jGBG2E2ziRDMxLgVK5pRXKRryAfAgeXU",
 	"PublicKey": "CAASpgIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCRuen1ckV538GkrbtoT8FK0S2AGgcvleIIQZQ6sGPkaCKsoG9suQ+mty/4gmlb6W1FpqpkJpqAP6SJtTTbeOprDUrpSOfwUiifscg0tpro5FEc0LzFO5wPh+AgbJx4UlRFqg3fBOoysTEgkPVYxFBz0GoRfHV2EOrbmOBF3k+mYk/pX1F+Y+txejpAl0l78mXCS8nMRLdqdZlRt6/QbTfN8QA6qgL0GVTkHFrGW5ZXqXJh/Lg15yqamENLkmTI5LPIzvn+tkJp1q6tdcpvR9k6Pv5utMqrjDWKUgdfZwRyKZsQ3exiKS9z/cSqJCPmzwxYvuM5izIjjC9B2PhgZtVvAgMBAAE=",
@@ -141,9 +147,12 @@ rameshbn@openvpn-srv:~/repos$ ipfs id
 }
 
 
+```
 
- export IPFS_PATH=/home/rameshbn/repos/three
-rameshbn@openvpn-srv:~/repos$ ipfs id
+Repo three
+```
+export IPFS_PATH=/home/rameshbn/repos/three
+$ ipfs id
 {
 	"ID": "QmXT5nFWBbUTDMB1LmLwp85DUoxXL3MkdiCnXBScP1nZAM",
 	"PublicKey": "CAASpgIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCfXgtVTJyBszGA46mN2otVyn4iOHeKO5IXsGPD1G7u6WduVAU3UYXN6IDgjWgl9MyVBtV3wAXIKK47bn/OnePZGrzVZ6RWtnWgBF7JST0BYgDQeeVL8MtKx3KyNBJdLILjK/cQmf94Lfw32aWemvF7WM/ZSQdbe601AXPl7/0A2w6TKozi7dSJIjBMo2ZNxeimoSwiigEUvg6zXJA8gREhQvoFIq3qshh+VXAe9w8R6P1G7alnHRfeDkdxGtwrBxlLPZfGDTuv5obVuBLcTrgCanewc1Qy4EJqiMDcF5FLjxVxAWzmcH2Sle5G06pf/8NTS0D7Qf0UhHAXCIJ2p0JrAgMBAAE=",
@@ -159,42 +168,70 @@ rameshbn@openvpn-srv:~/repos$ ipfs id
 	"ProtocolVersion": "ipfs/0.1.0"
 }
 
+```
+
+Check if all nodes are running
 
 
-
- ps
+```
+ps
   PID TTY          TIME CMD
  9306 pts/0    00:00:00 bash
 10052 pts/0    00:00:01 ipfs
 10095 pts/0    00:00:00 ipfs
 10127 pts/0    00:00:00 ipfs
 
+```
 
+##### Testing if swarm.key is working
 
-we have picked from two /ip4/127.0.0.1/tcp/7002/ipfs/QmP1NnQkMyYCV5jGBG2E2ziRDMxLgVK5pRXKRryAfAgeXU
+Pickup listener from repo two /ip4/127.0.0.1/tcp/7002/ipfs/QmP1NnQkMyYCV5jGBG2E2ziRDMxLgVK5pRXKRryAfAgeXU
 
+Try to connect from repo three 
+- Expected to fail (three has no swarm.key)
+ 
+```
 IPFS_PATH=/home/rameshbn/repos/three
+
+
  ipfs swarm connect /ip4/127.0.0.1/tcp/7002/ipfs/QmP1NnQkMyYCV5jGBG2E2ziRDMxLgVK5pRXKRryAfAgeXU
-^C
+
+```
 ---> does not connect
 
-rameshbn@openvpn-srv:~/repos$ env |grep IPFS
-IPFS_PATH=/home/rameshbn/repos/three
-rameshbn@openvpn-srv:~/repos$ export IPFS_PATH=/home/rameshbn/repos/two
-rameshbn@openvpn-srv:~/repos$ ipfs swarm connect /ip4/127.0.0.1/tcp/7002/ipfs/QmP1NnQkMyYCV5jGBG2E2ziRDMxLgVK5pRXKRryAfAgeXU
+
+Try to connect from repo two 
+- Expected to fail (same node)
+ 
+
+```
+
+$ export IPFS_PATH=/home/rameshbn/repos/two
+$ ipfs swarm connect /ip4/127.0.0.1/tcp/7002/ipfs/QmP1NnQkMyYCV5jGBG2E2ziRDMxLgVK5pRXKRryAfAgeXU
 Error: connect QmP1NnQkMyYCV5jGBG2E2ziRDMxLgVK5pRXKRryAfAgeXU failure: dial to self attempted
-rameshbn@openvpn-srv:~/repos$ export IPFS_PATH=/home/rameshbn/repos/one
-rameshbn@openvpn-srv:~/repos$ ipfs swarm connect /ip4/127.0.0.1/tcp/7002/ipfs/QmP1NnQkMyYCV5jGBG2E2ziRDMxLgVK5pRXKRryAfAgeXU
+
+```
+
+Try to connect from repo one
+- Expected to pass 
+
+```
+$ export IPFS_PATH=/home/rameshbn/repos/one
+$ ipfs swarm connect /ip4/127.0.0.1/tcp/7002/ipfs/QmP1NnQkMyYCV5jGBG2E2ziRDMxLgVK5pRXKRryAfAgeXU
 connect QmP1NnQkMyYCV5jGBG2E2ziRDMxLgVK5pRXKRryAfAgeXU success
 
+```
 
+Also listener of one to two
 
+- Not sure if it is needed. It works without this also
 
-below one is picked and connected in two
+```
 export IPFS_PATH=/home/rameshbn/repos/two
-rameshbn@openvpn-srv:~/repos$ ipfs swarm connect /ip4/127.0.0.1/tcp/4002/ipfs/QmVwvS2mjw3pvVgFqfYL5pwtnQhf68kWKVGRSWSMaUkSGS
+$ ipfs swarm connect /ip4/127.0.0.1/tcp/4002/ipfs/QmVwvS2mjw3pvVgFqfYL5pwtnQhf68kWKVGRSWSMaUkSGS
 connect QmVwvS2mjw3pvVgFqfYL5pwtnQhf68kWKVGRSWSMaUkSGS success
 
+```
 
 
 

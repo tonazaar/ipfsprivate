@@ -1,5 +1,5 @@
-rameshbn@openvpn-srv:~$ export IPFS_PATH=/home/rameshbn/repos/one
-rameshbn@openvpn-srv:~$ jsipfs daemon
+$ export IPFS_PATH=/home/rameshbn/repos/one
+$ jsipfs daemon
 Initializing IPFS daemon...
 js-ipfs version: 0.40.0
 System version: x64/linux

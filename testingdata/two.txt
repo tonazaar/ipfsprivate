@@ -1,9 +1,9 @@
 Note - ports have been changed
 
  IPFS_PATH=/home/rameshbn/repos/two
-rameshbn@openvpn-srv:~/repos$ jsipfs daemon &
+$ jsipfs daemon &
 [1] 9500
-rameshbn@openvpn-srv:~/repos$ Initializing IPFS daemon...
+$ Initializing IPFS daemon...
 js-ipfs version: 0.40.0
 System version: x64/linux
 Node.js version: 10.18.1
