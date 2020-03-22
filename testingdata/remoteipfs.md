@@ -138,27 +138,3 @@ ipfs cat QmU1ogwR2yzUZNzJps72avnnmLmHaDTnCSM2Kaxb5DwMf7
 this is inout test
 
 ```
-
-
-
- vi inout.txt
-[alarm@alarmpi ipfsrepos]$ ipfs add inout.txt 
-added QmU1ogwR2yzUZNzJps72avnnmLmHaDTnCSM2Kaxb5DwMf7 inout.txt
- 19 B / 19 B [========================================================================================================================] 100.00%[alarm@alarmpi ipfsrepos]$ ipfs cat QmU1ogwR2yzUZNzJps72avnnmLmHaDTnCSM2Kaxb5DwMf7
-this is inout test
-
-
-
-disconnect and test
-
- ipfs add inout2.txt
-added QmWx4cfTy4phy4HqZJB6j6YSDi7M27oYeVMYGGmPm9QXj6 inout2.txt
- 21 B / 21 B [========================================================================================================================] 100.00%[alarm@alarmpi ipfsrepos]$ ipfs cat QmWx4cfTy4phy4HqZJB6j6YSDi7M27oYeVMYGGmPm9QXj6
-this is second inout
-[alarm@alarmpi ipfsrepos]$ ipfs swarm peers
-
-
-
-
-
-
