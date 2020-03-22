@@ -247,8 +247,8 @@ Remove the entries of Boostrap in config file
 ##### Private network testing
 - [Goipfs installation and setup ](testingdata/goipfsstep.md)
 - [Private network setup for validation ](testingdata/goipfsvalidate.md)
-- [File access testing between nodes](goipfsfiletesting.md)
-- [Remote file access testing](remoteipfs.md)
+- [File access testing between nodes](testingdata/goipfsfiletesting.md)
+- [Remote file access testing](testingdata/remoteipfs.md)
 
 ##### References
 

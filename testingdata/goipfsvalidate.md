@@ -2,7 +2,7 @@
 
 A) Create 3 repos
 - repo (one, two) has swarm.key
-- repo (three has no swarm.key
+- repo (three) has no swarm.key
 
 
 Start repo three
