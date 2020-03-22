@@ -218,4 +218,4 @@ When swarm.key is present in $IPFS_PATH directory, only those peers what that sa
 
 
 
-
+[jsipfs for private network setup](testingdata/jsipfsstep.md)

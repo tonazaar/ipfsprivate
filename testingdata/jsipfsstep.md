@@ -1,16 +1,23 @@
-##### Test to check if jsipfs canbe used for private ipfs network
+### Suitability testing of jsipfs for private ipfs network
 
-A) create swarm.key
+Test to check if jsipfs can be used for private ipfs network
 
-https://medium.com/@s_van_laar/deploy-a-private-ipfs-network-on-ubuntu-in-5-steps-5aad95f7261b
+A) Create swarm.key
 
+Method of creating swarm.key is taken from below link
+
+- https://medium.com/@s_van_laar/deploy-a-private-ipfs-network-on-ubuntu-in-5-steps-5aad95f7261b
+
+```
 echo -e "/key/swarm/psk/1.0.0/\n/base16/\n`tr -dc 'a-f0-9' < /dev/urandom | head -c64`" > swarm.key
+
+```
 
 B) Create a repo (one, two) (three)
 
 Copy the swarm.key to repo-one, repo-two
 
-swarm.key is not copied to repo-three
+Note, swarm.key is not copied to repo-three
 
 C) Start the daemon with swarm.key present
 
@@ -20,11 +27,11 @@ D) Changing ports
 
 As the testing is being done in same machine, the ports of API, Gateway had to be changed
 
-- For repo two, the details in two.txt
-- For repo one, the details in one.txt
-- For repo three, the details in three.txt
+- For repo two, the details in [two.txt](two.txt)
+- For repo one, the details in [one.txt](one.txt)
+- For repo three, the details in [three.txt](three.txt)
 
-E) Test if node is fine
+E) Test if node one is fine
 
 ```
 IPFS_PATH=/home/rameshbn/repos/one
@@ -73,10 +80,10 @@ connect /ip4/127.0.0.1/tcp/7002/ipfs/QmP1NnQkMyYCV5jGBG2E2ziRDMxLgVK5pRXKRryAfAg
 
 ```
 
-In repo three, swarm.key is present. I was expected to fail
+In repo three, swarm.key is not present. I was expected to fail.
 
 ##### Summary
 
-- This means swarm.key is not working with jsipfs.
+- This means swarm.key method as tried is not working with jsipfs.
 
-- So we cannot use jsipfs for IPFS private network
+- So we cannot use jsipfs for IPFS private network.
