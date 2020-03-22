@@ -52,6 +52,8 @@ The IPFS nodes can be run in various methods
 
 ##### Starting a IPFS node          
 
+######  Downloading IPFS
+
 The IPFS setup can be created by downloading IPFS 
 
 Go IPFS can be obtained by following
@@ -150,10 +152,12 @@ drwxrwxr-x  2 rameshbn rameshbn 4096 Mar 20 17:00 local
 
 ```
 
-Important aspects of config is explained in
+###### Useful IPFS references
+
+Aspects of config is explained in
 - https://docs.ipfs.io/guides/examples/config/
 
-To play with IPFS coommands
+To play with IPFS commands
 - https://docs.ipfs.io/reference/api/cli/
 
 To try IPFS files as normal files 
@@ -164,7 +168,6 @@ Detailed examples using jsipfs
 
 Useful course on IPFS
 - https://github.com/ipfs/camp/tree/master/CORE_AND_ELECTIVE_COURSES/CORE_COURSE_C
-
 
 ##### Building IPFS private network
 
@@ -205,7 +208,6 @@ go run ipfs-swarm-key-gen/main.go > $IPFS_PATH/swarm.key
 
 ```
 
-
 Method-2
 
 ```
@@ -219,7 +221,21 @@ Method-2 is obtained from link
 
 When swarm.key is present in $IPFS_PATH directory, only those peers what that same key can connect.
 
-###### Suitability testing
+####### Copy swarm.key to $IPFS_PATH directory        
+
+```
+ cp swarm.key $IPFS_PATH
+```
+
+####### Remove the entries of Boostrap in config file 
+
+```
+"Bootstrap": [
+
+  ]
+```
+
+##### Suitability testing
 
 
 [Jsipfs testing ](testingdata/jsipfsstep.md)
