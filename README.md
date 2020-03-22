@@ -12,6 +12,13 @@ D) Storage system connected as IPFS cluster (private mode)
 E) Storage system connected as IPFS cluster (public mode)
 
 
+#### Effort 
+
+- Solving problems 4 hrs
+- Preparing for writing 16 hrs 
+- Writing 16 hrs
+
+
 #### Various type of IPFS nodes
 
 The IPFS nodes can be run in various methods
@@ -20,11 +27,13 @@ The IPFS nodes can be run in various methods
 - Browser IPFS
 - Desktop IPFS
 
-#### This setup
+#### Coverage 
 
-Here you will find information of following
+- This blog explains methods for (A), (B), (C)
 
-##### Evaluation 
+- It does not cover (D), (E)
+
+##### Suitability testing 
 
 - Evaluation of jsipfs for setup of private network
 - Evaluation of goipfs for setup of private network
@@ -124,7 +133,7 @@ Daemon is ready
 ```
 
 
-The above two steps show how to detup a default IPFS nodes
+The above two steps show how to setup a default IPFS nodes
 
 - The points to note are, the location of config file 
 
@@ -216,17 +225,22 @@ Method-2 is obtained from link
 
 When swarm.key is present in $IPFS_PATH directory, only those peers what that same key can connect.
 
+###### Suitability testing
 
 
-[jsipfs for private network setup](testingdata/jsipfsstep.md)
+[Jsipfs testing ](testingdata/jsipfsstep.md)
+[Goipfs testing ](testingdata/goipfsvalidate.md)
 
 
+###### Accessing methods
 
-[Remote access of IPFS files ](testingdata/apiaccess.md)
-[Accessing files in private gateway](testingdata/privategateway.md)
+[Remote access of IPFS files in program ](testingdata/apiaccess.md)
+[Accessing ipfs files in private gateway](testingdata/privategateway.md)
+[Accessing ipfs files in public gateway](publicaccess/publicaccess.md)
 
-[Accessing files in public gateway](publicaccess/publicaccess.md)
-
+###### Accessing modes
+[Public mode ](publicaccess/publicaccess.md)
+[Private mode ](testingdata/privategateway.md)
 
 ###### References
 
