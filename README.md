@@ -33,17 +33,17 @@ The IPFS nodes can be run in various methods
 
 - It does not cover (D), (E)
 
-##### Suitability testing 
+###### Suitability testing 
 
 - Evaluation of jsipfs for setup of private network
 - Evaluation of goipfs for setup of private network
 
-##### Accessing methods
+###### Accessing methods
 
 - Steps for accessing IPFS files through gateway
 - Steps for accessing IPFS files through API
 
-##### Accessing mode 
+###### Accessing mode 
 
 - Steps for accessing IPFS files from private node 
 - Steps for accessing IPFS files from public node 
@@ -84,7 +84,6 @@ $ jsipfs daemon
 
 
 ```
-
 ###### To start IPFS node using GO IPFS
 
 - Set environment variable IPFS_PATH to a directory of IPFS repository
@@ -102,7 +101,6 @@ peer identity: QmQpynLMNnjFWjGRVFenDQJzaWbERYiFvNi8QnBLqNUfo4
 to get started, enter:
 
         ipfs cat /ipfs/QmS4ustL54uo8FzR9455qaxZwuMiUhyvMcX9Ba8nUH4uVv/readme
-
 
 ipfs daemon 
 Initializing daemon...
@@ -128,10 +126,7 @@ WebUI: http://127.0.0.1:5001/webui
 Gateway (readonly) server listening on /ip4/127.0.0.1/tcp/8080
 Daemon is ready
 
-
-
 ```
-
 
 The above two steps show how to setup a default IPFS nodes
 
@@ -193,7 +188,6 @@ Those peers you see above are public peers
 
 For more details check this
 - https://docs.ipfs.io/guides/examples/bootstrap/
-
 
 
 ###### Private IPFS setup
