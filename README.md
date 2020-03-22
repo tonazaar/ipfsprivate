@@ -219,3 +219,23 @@ When swarm.key is present in $IPFS_PATH directory, only those peers what that sa
 
 
 [jsipfs for private network setup](testingdata/jsipfsstep.md)
+
+
+
+[Remote access of IPFS files ](testingdata/apiaccess.md)
+[Accessing files in private gateway](testingdata/privategateway.md)
+
+[Accessing files in public gateway](publicaccess/publicaccess.md)
+
+
+###### References
+
+- https://github.com/ahester57/ipfs-private-swarm
+- https://mrh.io/ipfs-private-networks/
+- https://medium.com/@s_van_laar/deploy-a-private-ipfs-network-on-ubuntu-in-5-steps-5aad95f7261b
+- https://medium.com/@rossbulat/introduction-to-ipfs-set-up-nodes-on-your-network-with-http-gateways-10e21ea689a4
+- https://medium.com/@ConsenSys/an-introduction-to-ipfs-9bba4860abd0
+- https://brilliant.org/wiki/merkle-tree/
+- https://www.slideshare.net/chenghanTsai1/ipfs-85264010
+~                                                               
+

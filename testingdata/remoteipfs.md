@@ -161,19 +161,4 @@ this is second inout
 
 
 
-env |grep IPFS
-IPFS_PATH=/home/rameshbn/repos/one
-rameshbn@openvpn-srv:~/repos$ export IPFS_PATH=/home/rameshbn/repos/two
-rameshbn@openvpn-srv:~/repos$  ipfs cat QmU1ogwR2yzUZNzJps72avnnmLmHaDTnCSM2Kaxb5DwMf7
-this is inout test
-rameshbn@openvpn-srv:~/repos$ vi remo*
-rameshbn@openvpn-srv:~/repos$ ipfs cat QmWx4cfTy4phy4HqZJB6j6YSDi7M27oYeVMYGGmPm9QXj6
-^C
-Error: Post http://127.0.0.1:6002/api/v0/cat?arg=QmWx4cfTy4phy4HqZJB6j6YSDi7M27oYeVMYGGmPm9QXj6&encoding=json&stream-channels=true: context canceled
-rameshbn@openvpn-srv:~/repos$ export IPFS_PATH=/home/rameshbn/repos/one
-rameshbn@openvpn-srv:~/repos$ ipfs cat QmWx4cfTy4phy4HqZJB6j6YSDi7M27oYeVMYGGmPm9QXj6
-^C
-Error: Post http://127.0.0.1:5002/api/v0/cat?arg=QmWx4cfTy4phy4HqZJB6j6YSDi7M27oYeVMYGGmPm9QXj6&encoding=json&stream-channels=true: context canceled
-rameshbn@openvpn-srv:~/repos$ ipfs swarm peers
-/ip4/157.245.63.46/tcp/7002/ipfs/QmP1NnQkMyYCV5jGBG2E2ziRDMxLgVK5pRXKRryAfAgeXU
 
