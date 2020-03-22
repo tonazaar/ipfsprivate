@@ -1,49 +1,85 @@
+##### Accessing IPFS data
 
-Remote access to private network from browser
-Why api, why gateway
+The IPFS data can be accessed as a HTTP request or a IPFS client.
 
-
-https://github.com/ipfs/go-ipfs/blob/master/docs/gateway.md
-
-
-curl https://ipfs.io/api/v0/block/get/bafkreifjjcie6lypi6ny7amxnfftagclbuxndqonfipmb64f2km2devei4
+When accessing as HTTP request it can be accessed
+- from node gateway
+- from global gateway
 
 
 
- var publicurl = 'https://ipfs.io/ipfs/'+file.cid.toString()
-        var privateurl = localgateway + '/ipfs/'+file.cid.toString()
+In the config file you will find data like below
 
-
-For one repo
-
+```
  "API": "/ip4/157.245.63.46/tcp/5001",
-    "Gateway": "/ip4/157.245.63.46/tcp/9090",
+ "Gateway": "/ip4/157.245.63.46/tcp/9090",
+
+```
 
 
-   publicgateway: 'https://ipfs.io',
-      localgateway: 'http://157.245.63.46:9090',
+API based access
+
+It can be done using HTTP-client
+
+Details can be found in
+
+- https://github.com/ipfs/go-ipfs/blob/master/docs/gateway.md
+
+
+Public access
+
+ var publicgateway= 'https://ipfs.io';
+ var publicurl = 'https://ipfs.io/ipfs/'+file.cid.toString()
+
+
+```
+curl  http://ipfs.io/ipfs/QmU1ogwR2yzUZNzJps72avnnmLmHaDTnCSM2Kaxb5DwMf7
+
+```
+
+Node gateway access
+ var localgateway= 'http://157.245.63.46:9090';
+ var privateurl = localgateway + '/ipfs/'+file.cid.toString()
+
+```
 
 curl  http://157.245.63.46:9090/ipfs/QmU1ogwR2yzUZNzJps72avnnmLmHaDTnCSM2Kaxb5DwMf7
-curl  http://localhost:9090/ipfs/QmU1ogwR2yzUZNzJps72avnnmLmHaDTnCSM2Kaxb5DwMf7
+
+```
+
+###### Error while accessing gateway
 
 
+A) Working locally
 
-
+```
  curl  http://localhost:9090/ipfs/QmU1ogwR2yzUZNzJps72avnnmLmHaDTnCSM2Kaxb5DwMf7
 this is inout test
 
+```
 
+B) Error accessing remotely
+```
 curl  http://157.245.63.46:9090/ipfs/QmU1ogwR2yzUZNzJps72avnnmLmHaDTnCSM2Kaxb5DwMf7
 curl: (7) Failed to connect to 157.245.63.46 port 9090: Connection refused
 
-basics.txt:ipfs config Addresses.Gateway /ip4/0.0.0.0/tcp/9090
-basics.txt:ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '["*"]'
+```
+Solution to error
 
-restart daemon (needed)
+1) Run below commands
 
+ipfs config Addresses.Gateway /ip4/0.0.0.0/tcp/9090
+ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '["*"]'
+
+2) restart daemon (needed)
+
+3) Now it works
+
+```
 curl  http://157.245.63.46:9090/ipfs/QmU1ogwR2yzUZNzJps72avnnmLmHaDTnCSM2Kaxb5DwMf7
 this is inout test
 
+```
 
 
 
