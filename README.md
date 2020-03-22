@@ -221,13 +221,13 @@ Method-2 is obtained from link
 
 When swarm.key is present in $IPFS_PATH directory, only those peers what that same key can connect.
 
-####### Copy swarm.key to $IPFS_PATH directory        
+Copy swarm.key to $IPFS_PATH directory        
 
 ```
  cp swarm.key $IPFS_PATH
 ```
 
-####### Remove the entries of Boostrap in config file 
+Remove the entries of Boostrap in config file 
 
 ```
 "Bootstrap": [
@@ -238,21 +238,21 @@ When swarm.key is present in $IPFS_PATH directory, only those peers what that sa
 ##### Suitability testing
 
 
-[Jsipfs testing ](testingdata/jsipfsstep.md)
-[Goipfs testing ](testingdata/goipfsvalidate.md)
+- [Jsipfs testing ](testingdata/jsipfsstep.md)
+- [Goipfs testing ](testingdata/goipfsvalidate.md)
 
 
-###### Accessing methods
+##### Accessing methods
 
-[Remote access of IPFS files in program ](testingdata/apiaccess.md)
-[Accessing ipfs files in private gateway](testingdata/privategateway.md)
-[Accessing ipfs files in public gateway](publicaccess/publicaccess.md)
+- [Remote access of IPFS files in program ](testingdata/apiaccess.md)
+- [Accessing ipfs files in private gateway](testingdata/privategateway.md)
+- [Accessing ipfs files in public gateway](publicaccess/publicaccess.md)
 
-###### Accessing modes
-[Public mode ](publicaccess/publicaccess.md)
-[Private mode ](testingdata/privategateway.md)
+##### Accessing modes
+- [Public mode ](publicaccess/publicaccess.md)
+- [Private mode ](testingdata/privategateway.md)
 
-###### References
+##### References
 
 - https://github.com/ahester57/ipfs-private-swarm
 - https://mrh.io/ipfs-private-networks/

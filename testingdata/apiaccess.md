@@ -1,25 +1,31 @@
 ##### Accessing IPFS data 
+The IPFS data can be accessed as a HTTP request or through a IPFS javascript client.
 
-The IPFS data can be accessed as a HTTP request or a IPFS client.
-
-When accessing as HTTP request it can be accessed
-- from node gateway
-- from global gateway
-
+A) When accessing as HTTP request it can be done through 
+- node gateway
+- global gateway
 
 
-In the config file you will find data like below
+B) When accessing through IPFS javascript client, you can use
+- https://github.com/ipfs/js-ipfs-http-client
+
+
+C) The config file has API and Gateway access points
 
 ```
  "API": "/ip4/157.245.63.46/tcp/5001",
  "Gateway": "/ip4/157.245.63.46/tcp/9090",
 
 ```
+This document explains IPFS javascript client way of access
 
+For HTTP method of access refer 
+- [node gateway access](privategateway.md)
+- [global gateway access](../publicaccess/publicaccess.md)
 
-##### API based access
+##### Javascript client based access
 
-By embedding IPFS in application of browser, node.js application, IPFS http client can be used
+By embedding IPFS javascript client in browser, node.js application, IPFS data can be interacted remotely.
 
 The details about using is in the link
 
