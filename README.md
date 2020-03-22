@@ -236,14 +236,10 @@ Remove the entries of Boostrap in config file
 ```
 
 ##### Suitability testing
-
-
 - [Jsipfs testing ](testingdata/jsipfsstep.md)
 - [Goipfs testing ](testingdata/goipfsvalidate.md)
 
-
 ##### Accessing methods
-
 - [Remote access of IPFS files in program ](testingdata/apiaccess.md)
 - [Accessing ipfs files in private gateway](testingdata/privategateway.md)
 - [Accessing ipfs files in public gateway](publicaccess/publicaccess.md)
@@ -251,6 +247,11 @@ Remove the entries of Boostrap in config file
 ##### Accessing modes
 - [Public mode ](publicaccess/publicaccess.md)
 - [Private mode ](testingdata/privategateway.md)
+
+##### Private network testing
+- [Private network setup for testing ](testingdata/goipfsstep.md)
+- [File access testing between nodes] (goipfsfiletesting.md)
+- [Remote file access testing](remoteipfs.md)
 
 ##### References
 
