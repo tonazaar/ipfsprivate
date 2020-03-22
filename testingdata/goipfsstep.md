@@ -1,8 +1,5 @@
-
 ##### Installing go-ipfs 
-
-/home/rameshbn/repos
-Install go-ipfs on ubuntu
+A) Install go-ipfs on ubuntu
 
 ```
 $ sudo snap install ipfs
@@ -10,12 +7,11 @@ ipfs v0.4.21 from Leo Arias (elopio) installed
 
 ```
 
-Validating if go-ipfs suitable for IPFS private network
+B) 3 node setup and validation (for IPFS private network)
 
-- [Steps for validating](goipfsvalidate.md)
+- [Setup and validation](goipfsvalidate.md)
 
-
-Data transfer between nodes in IPFS private network
+C) Data transfer testing between nodes in IPFS private network
 
 - [Testing data access between repos](goipfsfiletesting.md)
 

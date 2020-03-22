@@ -244,13 +244,10 @@ Remove the entries of Boostrap in config file
 - [Accessing ipfs files in private gateway](testingdata/privategateway.md)
 - [Accessing ipfs files in public gateway](publicaccess/publicaccess.md)
 
-##### Accessing modes
-- [Public mode ](publicaccess/publicaccess.md)
-- [Private mode ](testingdata/privategateway.md)
-
 ##### Private network testing
-- [Private network setup for testing ](testingdata/goipfsstep.md)
-- [File access testing between nodes] (goipfsfiletesting.md)
+- [Goipfs installation and setup ](testingdata/goipfsstep.md)
+- [Private network setup for validation ](testingdata/goipfsvalidate.md)
+- [File access testing between nodes](goipfsfiletesting.md)
 - [Remote file access testing](remoteipfs.md)
 
 ##### References
