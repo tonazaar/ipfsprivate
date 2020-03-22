@@ -1,12 +1,24 @@
- env |grep IPFS
+##### Testing remote node in a private network
+
+Assumption
+
+- A private network exists as in [setup](goipfsvalidate.md)
+- It has repo one, repo two
+- The ports used in repo one and two is mentioned in [one.txt](one.txt), [two.txt](two.txt)
+
+
+A) Create a remote ipfs node
+
 IPFS_PATH=/home/alarm/ipfsrepos/remoteone
 
 
-copy swarm.key
+B) copy swarm.key from other node to $IPFS_PATH
 
+C) Start IPFS daemon
+
+```
 ipfs daemon &
-[1] 553
-[alarm@alarmpi ipfsrepos]$ Initializing daemon...
+$ Initializing daemon...
 go-ipfs version: 0.4.23-6ce9a355f
 Repo version: 7
 System version: arm/linux
@@ -33,10 +45,11 @@ WebUI: http://127.0.0.1:5001/webui
 Gateway (readonly) server listening on /ip4/127.0.0.1/tcp/8080
 Daemon is ready
 
+```
 
+D) Get listener of remote IPFS 
 
-
-
+```
 ipfs id
 {
 	"ID": "QmUk11oukR2Fp8TSX1RLQZAivyo96JvydSiKfrkJdJoEQb",
@@ -52,70 +65,79 @@ ipfs id
 	],
 	"AgentVersion": "go-ipfs/0.4.23/6ce9a355f",
 	"ProtocolVersion": "ipfs/0.1.0"
+```
 
+E) Try to connect to main repo one  
 
+```
 
 ipfs swarm connect /ip4/157.245.63.46/tcp/4002/ipfs/QmVwvS2mjw3pvVgFqfYL5pwtnQhf68kWKVGRSWSMaUkSGS
 Error: connect QmVwvS2mjw3pvVgFqfYL5pwtnQhf68kWKVGRSWSMaUkSGS failure: failed to dial : all dials failed
   * [/ip4/157.245.63.46/tcp/4002] dial tcp4 0.0.0.0:4001->157.245.63.46:4002: i/o timeout
 [alarm@alarmpi ipfsrepos]$ ps  
 
+```
+It fails to connect
 
+F) The firewall was blocking
 
-/ip4/157.245.63.46/tcp/4002/ipfs/QmVwvS2mjw3pvVgFqfYL5pwtnQhf68kWKVGRSWSMaUkSGS^C
-rameshbn@openvpn-srv:~/repos$ ufw allow 4002
-ERROR: You need to be root to run this script
-rameshbn@openvpn-srv:~/repos$ sudo ufw allow 4002
+Provide access in firewall
+
+```
+/ip4/157.245.63.46/tcp/4002/ipfs/QmVwvS2mjw3pvVgFqfYL5pwtnQhf68kWKVGRSWSMaUkSGS
+
+$ ufw allow 4002
+$ sudo ufw allow 4002
 Rule added
 Rule added (v6)
 
+```
 
+G) Try connecting gain
 
+It connects
 
+```
  ipfsrepos]$ ipfs swarm connect /ip4/157.245.63.46/tcp/4002/ipfs/QmVwvS2mjw3pvVgFqfYL5pwtnQhf68kWKVGRSWSMaUkSGS
 connect QmVwvS2mjw3pvVgFqfYL5pwtnQhf68kWKVGRSWSMaUkSGS success
 
+```
+
+H) Check file transfer
 
 
+In repo one create a file
 
-
- export IPFS_PATH=`pwd`/one
-rameshbn@openvpn-srv:~/repos$ vi rem1.txt
-rameshbn@openvpn-srv:~/repos$ ipfs add rem1.txt
+```
+export IPFS_PATH=`pwd`/one
+$ vi rem1.txt
+$ ipfs add rem1.txt
 added QmT3NxKyWMwj6Y9xcYZc99xBTKCoicL84J3FRRrBXD2ZTQ rem1.txt
  24 B / 24 B [===============================================================================================
 
+```
 
+In remote node check file
 
+```
 [alarm@alarmpi ipfsrepos]$ ipfs cat QmT3NxKyWMwj6Y9xcYZc99xBTKCoicL84J3FRRrBXD2ZTQ
 this is for remote test
 
+```
+- you are able to see file
 
+I) Below is expected to fail, but works (need further study)
 
-below is inout test (not expected to work). But working
+- Create file in remote node, it is appearing in repo one.
+- I have not connected repo one to remote node listner (as gateway is not allowing)
 
+I am able to access file in repo one, which was created in remote node
 
-
-rameshbn@openvpn-srv:~/repos$  ipfs cat QmU1ogwR2yzUZNzJps72avnnmLmHaDTnCSM2Kaxb5DwMf7
-this is inout test
-rameshbn@openvpn-srv:~/repos$ ipfs peers
-Error: Unknown Command "peers"
-
-rameshbn@openvpn-srv:~/repos$ ipfs swarm peers
-/ip4/157.245.63.46/tcp/7002/ipfs/QmP1NnQkMyYCV5jGBG2E2ziRDMxLgVK5pRXKRryAfAgeXU
-/ip4/49.37.194.207/tcp/4001/ipfs/QmUk11oukR2Fp8TSX1RLQZAivyo96JvydSiKfrkJdJoEQb
-rameshbn@openvpn-srv:~/repos$ ping 49.37.194.207
-PING 49.37.194.207 (49.37.194.207) 56(84) bytes of data.
-^C
---- 49.37.194.207 ping statistics ---
-6 packets transmitted, 0 received, 100% packet loss, time 5100ms
-
-rameshbn@openvpn-srv:~/repos$ env |grep IPFS
-IPFS_PATH=/home/rameshbn/repos/one
-rameshbn@openvpn-srv:~/repos$ export IPFS_PATH=/home/rameshbn/repos/two
-rameshbn@openvpn-srv:~/repos$  ipfs cat QmU1ogwR2yzUZNzJps72avnnmLmHaDTnCSM2Kaxb5DwMf7
+```
+ipfs cat QmU1ogwR2yzUZNzJps72avnnmLmHaDTnCSM2Kaxb5DwMf7
 this is inout test
 
+```
 
 
 
