@@ -164,11 +164,11 @@ Useful course on IPFS
 
 ##### Building IPFS private network
 
-For comparison in normal IPFS setup, the IPFS node is connected to its peer public nodes. In private network, you generate a key (called swarm.key), which will be placed in IPF_PATH directory. Only those nodes with that swarm.key can only connect to each other.
+For comparison in normal IPFS setup, the IPFS node is connected to its peer public nodes. In private network, you generate a key (called swarm.key), which will be placed in IPFS_PATH directory. Only those nodes with that swarm.key can only connect to each other.
 
 ###### Normal IPFS setup
 
-In normal IPFS setup, the IPFS node is connected to public peer nodes.  The peer nodes can be listed using command "ipfs swarm peers"
+In normal IPFS setup, the IPFS node are connected to public peer nodes.  The peer nodes can be listed using command "ipfs swarm peers"
 
 Example           
 
@@ -189,7 +189,7 @@ For more details check this
 
 ###### Private IPFS setup
 
-In private network, you generate a key (called swarm.key), which will be placed in IPF_PATH directory. Only those nodes with that swarm.key can only connect to each other.
+In private network, you generate a key (called swarm.key), which will be placed in IPFS_PATH directory. Only those nodes with that swarm.key can only connect to each other.
 
 A swarm key is created using one of the two methods
  
