@@ -34,7 +34,7 @@ Some mention of using custom header
 - https://github.com/ipfs/js-ipfs-http-client/issues/724 (used when starting from node.js)
 
 
-E) The other method i think can help is having a proxy to do jwt access before it reaches the IPFS node
+E) The other method is to have a proxy to do jwt access control before it reaches the IPFS node
 
 The following may help for that
 
