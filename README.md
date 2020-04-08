@@ -259,5 +259,6 @@ Remove the entries of Boostrap in config file
 - https://medium.com/@ConsenSys/an-introduction-to-ipfs-9bba4860abd0
 - https://brilliant.org/wiki/merkle-tree/
 - https://www.slideshare.net/chenghanTsai1/ipfs-85264010
+- https://labs.eleks.com/2019/03/ipfs-network-data-replication.html
 ~                                                               
 
